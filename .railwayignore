@@ -1,0 +1,14 @@
+# keep the snapshot small
+.venv/
+venv/
+__pycache__/
+node_modules/
+.git/
+data/
+artifacts/
+*.parquet
+*.pkl
+*.csv
+*.xlsx
+*.ipynb
+.DS_Store

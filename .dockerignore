@@ -1,0 +1,17 @@
+# (keep most ignores)
+.venv/
+venv/
+__pycache__/
+node_modules/
+.git/
+data/
+*.ipynb
+.DS_Store
+
+# Allow the three required artifacts
+artifacts/**
+
+
+# IMPORTANT: remove any global "*.parquet" or "*.pkl" ignores,
+# or keep them ABOVE with explicit allow rules BELOW, like above.
+

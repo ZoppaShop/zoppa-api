@@ -1,0 +1,15 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+
+[build.args]
+CATALOG_URL = "https://.../catalog.parquet"
+PRODUCTS_PCA_URL = "https://.../products_pca.parquet"
+PCA_URL = "https://.../pca.pkl"
+
+[deploy]
+startCommand = ""  # Let Dockerfile CMD handle this
+healthcheckPath = "/health"  # Use the dedicated health endpoint
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
