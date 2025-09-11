@@ -1,0 +1,80 @@
+/* Layout general del widget */
+.zoppa-drawer {
+  position: fixed; right: 24px; bottom: 92px; width: 440px; max-width: 96vw;
+  background:#fff; border:1px solid #e6e6e6; border-radius:16px; z-index: 9999;
+  box-shadow:0 10px 28px rgba(0,0,0,.18); display:none;
+}
+.zoppa-drawer.open { display:block; animation: slideIn .18s ease-out; }
+@keyframes slideIn { from{ transform: translateY(10px); opacity:.0 } to{ transform: translateY(0); opacity:1 } }
+.zoppa-fab {
+  position: fixed; right: 24px; bottom: 24px; z-index: 9999;
+  background:#6a30ff; color:#fff; border-radius:999px; padding:10px 14px;
+  box-shadow:0 8px 22px rgba(0,0,0,.18); cursor:pointer; font-weight:600; font-size:14px;
+}
+
+/* Caja de chat */
+.zoppa-chat { padding:12px; }
+.zoppa-chat__window{
+  border:1px solid #e3e3e3; border-radius:12px; padding:12px;
+  min-height:260px; max-height:56vh;
+  background:#fff;
+  overflow-y:auto;                 /* <- asegura scroll vertical */
+  overscroll-behavior: contain;    /* <- no arrastra el body */
+  scroll-behavior: smooth;         /* <- scroll suave */
+}
+
+.zoppa-msg{ padding:10px 12px; border-radius:12px; margin:8px 0; max-width:84%; line-height:1.45; font-size:14px; }
+.zoppa-msg.me{ margin-left:auto; background:#e8f0ff; }
+.zoppa-msg.bot{ margin-right:auto; background:#f6f6f6; }
+
+/* Formulario más prolijo y el input más largo */
+.zoppa-chat__form{
+  position: sticky; bottom: 0;
+  display:flex; align-items:center; gap:8px;
+  margin-top:10px; background:#fff; padding-top:8px;
+}
+
+.zoppa-chat__form textarea{
+  flex: 1 1 auto;                 /* ocupa casi todo el ancho */
+  min-width: 0;                   /* evita desbordes en flex */
+  padding:10px 12px;
+  border-radius:10px; border:1px solid #ddd;
+  resize:none; overflow:auto;
+  --zoppa-textarea-max: 132;      /* ~6 líneas; luego scrollea */
+  max-height: 5em !important;
+  font-size:14px; line-height:1.4;
+  min-height: 5em !important;
+}
+
+.zoppa-chat-input{
+    max-height: 5em !important;  
+    min-height: 5em !important;        
+}
+
+.zoppa-chat__input{
+    max-height: 5em !important;        
+    min-height: 5em !important;  
+}
+
+.zoppa-chat_input{
+    max-height: 5em !important;    
+    min-height: 5em !important;       
+}
+
+/* Botones compactos */
+.zbtn{
+  border:none; border-radius:999px;
+  padding:10px 30px !important;               /* <- más chico */
+  font-weight:600; font-size:12px !important;/* <- más chico */
+  cursor:pointer; flex: 0 0 auto !important; /* ancho ajustado al texto */
+}
+.zbtn--primary{ background:#b89a60; color:#fff; padding:10px 30px !important;    }
+.zbtn--ghost  { background:#d8c39a; color:#fff; padding:10px 30px !important;    }
+
+
+/* Grid de productos (cards dentro del chat) */
+.zoppa-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top:10px; }
+.zoppa-card{ display:block; border:1px solid #eee; border-radius:12px; padding:8px; background:#fff; text-decoration:none; color:#222; }
+.zoppa-card img{ width:100%; height:200px; object-fit:cover; border-radius:8px; }
+.zoppa-card__meta{ margin-top:6px; display:flex; flex-direction:column; gap:2px; font-size:13px; }
+.zoppa-card .price{ opacity:.85; }
